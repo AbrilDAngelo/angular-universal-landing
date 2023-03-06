@@ -1,0 +1,142 @@
+<div class="p-3">
+	<div class="card">
+		<div class="card-header fs-3">Da el primer paso a tu futuro</div>
+		<div class="card-body p-2">
+			<form [formGroup]="contactForm" class="section-1__form" (submit)="sendContact()">
+				<div class="row">
+					<div class="col">
+						<input
+							type="email"
+							formControlName="email"
+							class="form-control mb-1"
+							[ngClass]="{
+								'form-control--invalid':
+									contactForm.controls['email'].invalid &&
+									(contactForm.controls['email'].dirty || contactForm.controls['email'].touched)
+							}"
+							placeholder="Email*"
+						/>
+						<ng-container
+							*ngIf="
+								contactForm.controls['email'].invalid &&
+								(contactForm.controls['email'].dirty || contactForm.controls['email'].touched)
+							"
+						>
+							<div class="form__warning" *ngIf="contactForm.controls['email'].errors?.['required']">
+								El email es un campo obligatorio
+							</div>
+							<div class="form__warning" *ngIf="contactForm.controls['email'].errors?.['email']">
+								El email debe tener un formato válido
+							</div>
+						</ng-container>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<input
+							type="text"
+							formControlName="name"
+							class="form-control mb-1"
+							[ngClass]="{
+								'form-control--invalid':
+									contactForm.controls['name'].invalid &&
+									(contactForm.controls['name'].dirty || contactForm.controls['name'].touched)
+							}"
+							placeholder="Nombre*"
+						/>
+						<ng-container
+							*ngIf="
+								contactForm.controls['name'].invalid &&
+								(contactForm.controls['name'].dirty || contactForm.controls['name'].touched)
+							"
+						>
+							<div class="form__warning" *ngIf="contactForm.controls['name'].errors?.['required']">
+								El nombre es un campo obligatorio
+							</div>
+							<div class="form__warning" *ngIf="contactForm.controls['name'].errors?.['minlength']">
+								El nombre debe tener al menos 3 caracteres
+							</div>
+						</ng-container>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<input
+							type="text"
+							formControlName="lastName"
+							class="form-control mb-1"
+							[ngClass]="{
+								'form-control--invalid':
+									contactForm.controls['lastName'].invalid &&
+									(contactForm.controls['lastName'].dirty ||
+										contactForm.controls['lastName'].touched)
+							}"
+							placeholder="Apellido*"
+						/>
+						<ng-container
+							*ngIf="
+								contactForm.controls['lastName'].invalid &&
+								(contactForm.controls['lastName'].dirty || contactForm.controls['lastName'].touched)
+							"
+						>
+							<div
+								class="form__warning"
+								*ngIf="contactForm.controls['lastName'].errors?.['required']"
+							>
+								El apellido es un campo obligatorio
+							</div>
+							<div
+								class="form__warning"
+								*ngIf="contactForm.controls['lastName'].errors?.['minlength']"
+							>
+								El apellido debe tener al menos 3 caracteres
+							</div>
+						</ng-container>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<input
+							type="tel"
+							formControlName="phoneNumber"
+							class="form-control mb-1"
+							[ngClass]="{
+								'form-control--invalid':
+									contactForm.controls['phoneNumber'].invalid &&
+									(contactForm.controls['phoneNumber'].dirty ||
+										contactForm.controls['phoneNumber'].touched)
+							}"
+							placeholder="Teléfono*"
+						/>
+						<ng-container
+							*ngIf="
+								contactForm.controls['phoneNumber'].invalid &&
+								(contactForm.controls['phoneNumber'].dirty ||
+									contactForm.controls['phoneNumber'].touched)
+							"
+						>
+							<div
+								class="form__warning"
+								*ngIf="contactForm.controls['phoneNumber'].errors?.['required']"
+							>
+								El teléfono es un campo obligatorio
+							</div>
+							<div
+								class="form__warning"
+								*ngIf="contactForm.controls['phoneNumber'].errors?.['minlength']"
+							>
+								El teléfono debe tener al menos 6 caracteres
+							</div>
+						</ng-container>
+					</div>
+				</div>
+				<div class="alert alert-success" *ngIf="showSuccessAlert">
+					Mensaje enviado. Revise su casilla.
+				</div>
+				<button type="submit" class="btn mt-2" [disabled]="contactForm.invalid">
+					Recibir información
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

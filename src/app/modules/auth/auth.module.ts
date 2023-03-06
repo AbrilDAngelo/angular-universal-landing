@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 // This Module Imports
 import { AuthRoutingModule } from './auth-routing.module'
 // Shared Imports
-import { MaterialModule } from '@app/modules'
+// import { MaterialModule } from '@app/modules'
 
 // Views
 // import { LoginComponent } from '@app/auth/views'
@@ -16,7 +16,7 @@ const exports: any[] = []
 
 @NgModule({
 	declarations: [...components],
-	imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule, MaterialModule],
+	imports: [CommonModule, AuthRoutingModule, ReactiveFormsModule],
 	exports: [...exports],
 })
 export class AuthModule {}

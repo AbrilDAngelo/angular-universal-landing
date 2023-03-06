@@ -1,0 +1,93 @@
+@use 'styles' as styles;
+
+.section-1 {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.795)),
+		url('../../../../../assets/backgrounds/section-1-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	&__title {
+		color: styles.colors(white);
+		h1 {
+			font-size: 4rem;
+			@include styles.to(tb) {
+				font-size: 3rem;
+			}
+		}
+	}
+}
+.section-navbar {
+	background-color: styles.colors(primary);
+	&__link {
+		text-decoration: none;
+		color: styles.colors(white);
+		cursor: pointer;
+	}
+}
+.section-2 {
+	&__title {
+		font-size: 2rem;
+		line-height: 1;
+		margin-bottom: styles.spacing(m);
+	}
+	&__body {
+		color: styles.colors(dark);
+	}
+	&__table {
+		@include styles.to(tb) {
+			margin-top: styles.spacing(m);
+		}
+		td {
+			color: styles.colors(dark);
+			border-bottom: 1px solid styles.colors(gray);
+			padding-right: styles.spacing(m);
+		}
+		td:first-child {
+			color: styles.colors(primary);
+		}
+	}
+}
+.section-3 {
+	&__teacher-photo {
+		@include styles.to(tb) {
+			margin-top: styles.spacing(m);
+		}
+	}
+	&__bio {
+		color: styles.colors(grayDark);
+	}
+	&__video {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16/9;
+	}
+}
+.section-4 {
+	background-color: styles.colors(grayLight);
+	color: styles.colors(grayDark);
+	&__title {
+		font-size: 3rem;
+		color: styles.colors(grayDark);
+	}
+	&__subtitle {
+		color: styles.colors(dark);
+		font-size: 1.5rem;
+		line-height: 1;
+		font-weight: 700;
+	}
+}
+.section-5 {
+	color: styles.colors(grayDark);
+	&__img {
+		width: 100%;
+	}
+	&__title {
+		font-size: 3rem;
+		line-height: 1;
+	}
+}
+.section-footer {
+	background-color: styles.colors(grayLight);
+	&__logo {
+		max-width: 500px;
+	}
+}

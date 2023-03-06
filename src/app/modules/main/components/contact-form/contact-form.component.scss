@@ -1,0 +1,21 @@
+@use 'styles' as styles;
+
+.form-control {
+	&--invalid {
+		border-color: red;
+	}
+}
+.form {
+	&__warning {
+		font-size: styles.fontsizes(smallOne);
+	}
+}
+.btn {
+	background-color: styles.colors(primary);
+	color: styles.colors(white);
+}
+
+.card-header {
+	background-color: styles.colors(dark);
+	color: styles.colors(white);
+}

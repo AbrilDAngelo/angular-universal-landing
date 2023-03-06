@@ -31,6 +31,8 @@
 			"@shared/resolvers": ["src/app/shared/resolvers/index.ts"],
 			"@shared/interceptors": ["src/app/shared/interceptors/index.ts"],
 			"@shared/validators": ["src/app/shared/validators/index.ts"],
+			"@main/views":["src/app/modules/main/views/index.ts"],
+			"@main/components":["src/app/modules/main/components/index.ts"],
 			"@environment": ["src/environments/environment.ts"],
 			"@store/*": ["src/app/store/*"]
 		}
